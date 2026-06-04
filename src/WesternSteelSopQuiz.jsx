@@ -22,7 +22,7 @@ import {
 
 /* =====================================================================
    WESTERN STEEL BUILDINGS, SOP MANUAL QUIZ
-   40 questions (20 multiple-choice + 20 true/false).
+   50 questions (30 multiple-choice + 20 true/false).
    No question sampling, every attempt sees all 40 in randomized order.
    ===================================================================== */
 
@@ -32,14 +32,14 @@ const ALL_QUESTIONS = [
   {
     type: "mc",
     prompt: "What are Western Steel Buildings' three global priorities?",
-    options: ["Sales, Marketing, and Engineering", "Cost, Schedule, and High-Level Communication", "Safety, Speed, and Profit", "Estimating, Procurement, and Delivery"],
-    correct: 1,
+    options: ["Cost, Schedule, and High-Level Communication", "Sales, Marketing, and Engineering", "Safety, Speed, and Profit", "Estimating, Procurement, and Delivery"],
+    correct: 0,
   },
   {
     type: "mc",
     prompt: "Which of the following is one of Western's Four Points of Distinction?",
-    options: ["Lowest Price Guarantee", "Dedicated Point of Contact", "Free Engineering Review", "Same-Day Fabrication"],
-    correct: 1,
+    options: ["Lowest Price Guarantee", "Free Engineering Review", "Same-Day Fabrication", "Dedicated Point of Contact"],
+    correct: 3,
   },
   {
     type: "mc",
@@ -50,8 +50,8 @@ const ALL_QUESTIONS = [
   {
     type: "mc",
     prompt: "What system is the post-sale source of truth?",
-    options: ["Zoho CRM", "Shared Drive only", "Zoho Creator / Project Manager software", "Dialpad"],
-    correct: 2,
+    options: ["Zoho CRM", "Shared Drive only", "Dialpad", "Zoho Creator / Project Manager software"],
+    correct: 3,
   },
   {
     type: "mc",
@@ -62,26 +62,26 @@ const ALL_QUESTIONS = [
   {
     type: "mc",
     prompt: "Internal communication must be answered by:",
-    options: ["The end of the same business day", "Within 60 business minutes", "Within 24 calendar hours", "The next weekly meeting"],
-    correct: 0,
-  },
-  {
-    type: "mc",
-    prompt: "All company communication must run through:",
-    options: ["Personal phones", "Slack", "Dialpad", "Email only"],
-    correct: 2,
-  },
-  {
-    type: "mc",
-    prompt: "Pre-sale client-facing roles are limited to:",
-    options: ["Project Manager and Procurement Manager", "District Manager and Account Manager", "Estimator and Engineer", "Finance and Operations"],
+    options: ["Within 60 business minutes", "The end of the same business day", "Within 24 calendar hours", "The next weekly meeting"],
     correct: 1,
   },
   {
     type: "mc",
+    prompt: "All company communication must run through:",
+    options: ["Dialpad", "Personal phones", "Slack", "Email only"],
+    correct: 0,
+  },
+  {
+    type: "mc",
+    prompt: "Pre-sale client-facing roles are limited to:",
+    options: ["Project Manager and Procurement Manager", "Estimator and Engineer", "Finance and Operations", "District Manager and Account Manager"],
+    correct: 3,
+  },
+  {
+    type: "mc",
     prompt: "Engineering and Estimating may communicate directly with clients only when:",
-    options: ["The client emails them first", "The project is delayed", "The client specifically requests it and the client-facing lead coordinates it", "Sales is unavailable"],
-    correct: 2,
+    options: ["The client emails them first", "The client specifically requests it and the client-facing lead coordinates it", "The project is delayed", "Sales is unavailable"],
+    correct: 1,
   },
   {
     type: "mc",
@@ -104,26 +104,26 @@ const ALL_QUESTIONS = [
   {
     type: "mc",
     prompt: "Who owns proposal creation in CRM?",
-    options: ["Estimator", "Project Manager", "District Manager / Account Manager", "Finance"],
-    correct: 2,
+    options: ["District Manager / Account Manager", "Estimator", "Project Manager", "Finance"],
+    correct: 0,
   },
   {
     type: "mc",
     prompt: "Low-margin proposals require approval from:",
-    options: ["Procurement Manager", "Vice President of Sales", "Field Services Manager", "Any District Manager"],
-    correct: 1,
-  },
-  {
-    type: "mc",
-    prompt: "What is the purpose of conceptual pricing?",
-    options: ["To replace a formal proposal", "To create a binding budget", "To provide directional pricing for unqualified opportunities", "To release a project for fabrication"],
+    options: ["Procurement Manager", "Field Services Manager", "Vice President of Sales", "Any District Manager"],
     correct: 2,
   },
   {
     type: "mc",
+    prompt: "What is the purpose of conceptual pricing?",
+    options: ["To replace a formal proposal", "To provide directional pricing for unqualified opportunities", "To create a binding budget", "To release a project for fabrication"],
+    correct: 1,
+  },
+  {
+    type: "mc",
     prompt: "Before estimating begins, a complete package should include items such as:",
-    options: ["RFP, drawings, specifications, design criteria, schedule, vendor pricing, margin check, and CRM budget", "Only the client's name and phone number", "A verbal scope from Sales", "A signed change order"],
-    correct: 0,
+    options: ["Only the client's name and phone number", "A verbal scope from Sales", "A signed change order", "RFP, drawings, specifications, design criteria, schedule, vendor pricing, margin check, and CRM budget"],
+    correct: 3,
   },
   {
     type: "mc",
@@ -134,14 +134,14 @@ const ALL_QUESTIONS = [
   {
     type: "mc",
     prompt: "If a project is a hangar, what must be included before estimating?",
-    options: ["Color chart only", "Hangar door specifications", "Warranty package", "Final payment receipt"],
-    correct: 1,
+    options: ["Color chart only", "Warranty package", "Final payment receipt", "Hangar door specifications"],
+    correct: 3,
   },
   {
     type: "mc",
     prompt: "Estimating is described as what type of function?",
-    options: ["Marketing function", "Technical and commercial control function", "Client entertainment function", "Administrative function only"],
-    correct: 1,
+    options: ["Technical and commercial control function", "Marketing function", "Client entertainment function", "Administrative function only"],
+    correct: 0,
   },
   {
     type: "mc",
@@ -267,6 +267,66 @@ const ALL_QUESTIONS = [
     type: "tf",
     prompt: "Warranty closeout starts at complete delivery of the primary steel package or complete envelope steel package, but the warranty package is not issued before final payment is received.",
     options: ["True", "False"],
+    correct: 0,
+  },
+  {
+    type: "mc",
+    prompt: "Which of the following correctly states the three guiding questions in the SOP manual?",
+    options: ["“What is my cost? What is my schedule? What is my margin?”", "“Who is the client? What do they need? When do they need it?”", "“Am I on time? Am I on budget? Am I communicating clearly?”", "“How am I a problem for others? How can I be more helpful to others? How can I help things go right?”"],
+    correct: 3,
+  },
+  {
+    type: "mc",
+    prompt: "What is the operational meaning of Scope Gap Solutions?",
+    options: ["Western guarantees the lowest scope pricing in the industry", "Western addresses scope gaps only after the client submits a formal change order", "Western must proactively identify and close scope gaps rather than allow them to emerge later as disruption, delay, or conflict", "Western outsources scope definition to third-party engineers"],
+    correct: 2,
+  },
+  {
+    type: "mc",
+    prompt: "What is the operational meaning of On-Time Delivery Guarantee?",
+    options: ["Delivery dates are set by the vendor and adjusted whenever needed", "Western refunds the client's deposit if delivery is late", "Commitments must be made carefully and supported with process discipline so delivery dates are credible and protected", "Delivery timing is estimated but never guaranteed"],
+    correct: 2,
+  },
+  {
+    type: "mc",
+    prompt: "What is the purpose of the Lead Qualification SOP?",
+    options: ["To create a binding budget for the client", "To determine whether an opportunity is sufficiently qualified to justify estimating resources and proposal effort", "To replace the proposal development process", "To assign a Project Manager before conversion"],
+    correct: 1,
+  },
+  {
+    type: "mc",
+    prompt: "What are the minimum daily intentional call expectations for pre-sale client-facing roles?",
+    options: ["5-10 intentional calls per day", "30-40 intentional calls per day", "15-20 intentional calls per day", "1-2 intentional calls per day"],
+    correct: 2,
+  },
+  {
+    type: "mc",
+    prompt: "What must the District Manager / Account Manager do when an opportunity is realistically expected to convert within 14 calendar days?",
+    options: ["Move the opportunity into the Contract in Two Weeks queue in CRM", "Convert the opportunity immediately", "Issue the deposit invoice before the proposal is signed", "Schedule the post-sale kickoff meeting"],
+    correct: 0,
+  },
+  {
+    type: "mc",
+    prompt: "Who schedules and runs the post-sale kickoff meeting?",
+    options: ["The Operations Manager", "The Project Manager", "The District Manager / Account Manager", "The Estimator"],
+    correct: 2,
+  },
+  {
+    type: "mc",
+    prompt: "Which of the following are all part of the required post-sale kickoff meeting agenda?",
+    options: ["Parking assignments, office seating, lunch order, and travel plans", "Commercial review, scope review, budget review, vendor plan, and submittal plan", "Marketing campaign, social media plan, ad spend, and branding", "Only the signed proposal and the deposit amount"],
+    correct: 1,
+  },
+  {
+    type: "mc",
+    prompt: "Who is responsible for placing the actual building package order?",
+    options: ["The District Manager / Account Manager", "The Estimator", "Finance", "Procurement"],
+    correct: 3,
+  },
+  {
+    type: "mc",
+    prompt: "What must be included in a monthly Backcharge Summary Report?",
+    options: ["Total number of backcharges received, total dollar value claimed and approved, average time to resolution, status of open backcharges, repeat-issue trends, recovery status, and responsible owner", "Only the total dollar value of backcharges", "A list of vendor names only", "The client's full payment history"],
     correct: 0,
   },
 ];
@@ -533,7 +593,7 @@ export default function WesternSteelSopQuiz() {
               SOP Manual Quiz
             </h1>
             <p className="text-base md:text-lg max-w-xl mb-6 opacity-90 leading-relaxed">
-              40 questions covering our Standard Operating Procedures. Both multiple-choice and true / false. Mix is randomized each attempt.
+              50 questions covering our Standard Operating Procedures. Both multiple-choice and true / false. Mix is randomized each attempt.
             </p>
             <div className="text-sm opacity-70 mb-10 space-y-1.5">
               <div className="flex items-center gap-2">
