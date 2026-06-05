@@ -557,8 +557,8 @@ export default function WesternSteelSopQuiz() {
           transition: border-color 0.15s, background 0.15s;
           outline: none;
           width: 100%;
-          padding: 12px 14px;
-          font-size: 16px;
+          padding: 16px 18px;
+          font-size: 18px;
         }
         .input-field:focus {
           border-color: #f47820;
@@ -574,8 +574,8 @@ export default function WesternSteelSopQuiz() {
           </div>
           <div className="flex items-center gap-4 flex-shrink-0">
             {stage === "quiz" && total > 0 && (
-              <div className="text-xs uppercase tracking-widest opacity-70">
-                {qIndex + 1} / {total}
+              <div className="font-display text-2xl md:text-3xl font-bold tracking-tight" style={{ color: "#f47820" }}>
+                {qIndex + 1} <span className="opacity-50 font-medium">/ {total}</span>
               </div>
             )}
           </div>
@@ -628,23 +628,23 @@ export default function WesternSteelSopQuiz() {
         )}
 
         {stage === "identify" && (
-          <div className="max-w-md">
-            <div className="diag-stripes h-2 mb-8" style={{
+          <div className="max-w-2xl">
+            <div className="diag-stripes h-2 mb-10" style={{
               background: 'repeating-linear-gradient(135deg, #f47820, #f47820 12px, transparent 12px, transparent 24px)',
             }} />
-            <div className="text-xs uppercase tracking-[0.4em] mb-4 opacity-60">
+            <div className="text-sm uppercase tracking-[0.4em] mb-5 opacity-60">
               Identify Yourself
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-medium mb-4">
+            <h2 className="font-display text-4xl md:text-6xl font-bold uppercase leading-none tracking-tight mb-6">
               Who's taking the quiz?
             </h2>
-            <p className="text-sm opacity-70 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl opacity-80 mb-10 leading-relaxed">
               Your name appears on the team scoreboard. Email is optional and is just used in case the team wants to follow up with you.
             </p>
-            <div className="space-y-4 mb-6">
+            <div className="space-y-6 mb-8">
               <div>
-                <label className="text-xs uppercase tracking-widest opacity-60 mb-1.5 flex items-center gap-2">
-                  <User className="w-3.5 h-3.5" /> Name
+                <label className="text-sm uppercase tracking-widest opacity-70 mb-3 flex items-center gap-2 font-semibold">
+                  <User className="w-5 h-5" /> Name
                 </label>
                 <input
                   type="text"
@@ -656,8 +656,8 @@ export default function WesternSteelSopQuiz() {
                 />
               </div>
               <div>
-                <label className="text-xs uppercase tracking-widest opacity-60 mb-1.5 flex items-center gap-2">
-                  <Mail className="w-3.5 h-3.5" /> Email
+                <label className="text-sm uppercase tracking-widest opacity-70 mb-3 flex items-center gap-2 font-semibold">
+                  <Mail className="w-5 h-5" /> Email
                   <span className="opacity-50 normal-case tracking-normal">(optional)</span>
                 </label>
                 <input
@@ -670,22 +670,22 @@ export default function WesternSteelSopQuiz() {
               </div>
             </div>
             {identifyError && (
-              <div className="text-sm text-red-300 mb-4">{identifyError}</div>
+              <div className="text-base text-red-300 mb-6">{identifyError}</div>
             )}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-4">
               <button
                 onClick={() => setStage("welcome")}
-                className="px-5 py-3 font-display text-sm uppercase tracking-widest border border-white/15 hover:bg-white/5 transition-colors"
+                className="px-7 py-4 font-display text-base md:text-lg uppercase tracking-widest border-2 border-white/15 hover:bg-white/5 transition-colors"
               >
                 Back
               </button>
               <button
                 onClick={startQuiz}
-                className="group inline-flex items-center gap-3 px-7 py-3 font-display text-sm uppercase tracking-widest font-semibold transition-all hover:gap-5"
+                className="group inline-flex items-center gap-3 px-10 py-5 font-display text-base md:text-lg uppercase tracking-widest font-semibold transition-all hover:gap-5"
                 style={{ background: "#f47820", color: "#0a0a0a" }}
               >
                 Start
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-6 h-6" />
               </button>
             </div>
           </div>
@@ -790,10 +790,7 @@ export default function WesternSteelSopQuiz() {
               </div>
             )}
 
-            <div className="flex justify-between items-center">
-              <div className="text-sm uppercase tracking-widest opacity-50">
-                Score: {score} / {results.filter(r => r !== null).length}
-              </div>
+            <div className="flex justify-end items-center">
               {!locked ? (
                 <button
                   onClick={submitAnswer}

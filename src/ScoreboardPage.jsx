@@ -149,13 +149,13 @@ export default function ScoreboardPage() {
         .font-display { font-family: 'Oswald', sans-serif; letter-spacing: 0.02em; }
       `}</style>
 
-      <div className="w-full px-6 md:px-12 lg:px-20 py-10 md:py-12">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 py-10 md:py-12">
         {/* Header */}
         <div className="flex items-center justify-between mb-10 gap-3 flex-wrap">
           <div className="flex items-center gap-4">
             <LogoBadge />
             <div className="hidden md:block w-px h-10 bg-white/10" />
-            <div className="hidden md:block text-xs uppercase tracking-[0.3em] opacity-60">
+            <div className="hidden md:block text-sm uppercase tracking-[0.3em] opacity-60">
               SOP Quiz Scoreboard
             </div>
           </div>
@@ -163,14 +163,14 @@ export default function ScoreboardPage() {
             <button
               onClick={refresh}
               disabled={loading}
-              className="flex items-center gap-2 px-3 py-2 text-xs uppercase tracking-widest border border-white/10 hover:bg-white/5 transition-colors disabled:opacity-50"
+              className="flex items-center gap-2 px-4 py-2 text-sm uppercase tracking-widest border border-white/10 hover:bg-white/5 transition-colors disabled:opacity-50"
             >
-              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
+              <RefreshCw className={`w-5 h-5 ${loading ? 'animate-spin' : ''}`} />
               Refresh
             </button>
             <a
               href="/"
-              className="text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity"
+              className="text-sm uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity"
             >
               ← Take the quiz
             </a>
@@ -181,7 +181,7 @@ export default function ScoreboardPage() {
           background: 'repeating-linear-gradient(135deg, #f47820, #f47820 12px, transparent 12px, transparent 24px)',
         }} />
 
-        <h1 className="font-display text-5xl md:text-7xl font-bold uppercase leading-none tracking-tight mb-4">
+        <h1 className="font-display text-4xl md:text-6xl font-bold uppercase leading-none tracking-tight mb-4">
           SOP Quiz Scoreboard
         </h1>
         <p className="text-lg md:text-xl opacity-70 mb-10 leading-relaxed">
@@ -192,41 +192,41 @@ export default function ScoreboardPage() {
         {!loading && attempts.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             <div className="border border-white/10 p-5">
-              <div className="text-xs uppercase tracking-widest opacity-60 mb-2">
+              <div className="text-sm uppercase tracking-widest opacity-60 mb-2">
                 Participants
               </div>
-              <div className="font-display text-3xl" style={{ color: '#f47820' }}>
+              <div className="font-display text-3xl md:text-4xl" style={{ color: '#f47820' }}>
                 {stats.uniquePeople}
               </div>
             </div>
             <div className="border border-white/10 p-5">
-              <div className="text-xs uppercase tracking-widest opacity-60 mb-2">
+              <div className="text-sm uppercase tracking-widest opacity-60 mb-2">
                 Total Attempts
               </div>
-              <div className="font-display text-3xl" style={{ color: '#f47820' }}>
+              <div className="font-display text-3xl md:text-4xl" style={{ color: '#f47820' }}>
                 {stats.totalAttempts}
               </div>
             </div>
             <div className="border border-white/10 p-5">
-              <div className="text-xs uppercase tracking-widest opacity-60 mb-2">
+              <div className="text-sm uppercase tracking-widest opacity-60 mb-2">
                 Avg. Score
               </div>
-              <div className="font-display text-3xl" style={{ color: '#f47820' }}>
+              <div className="font-display text-3xl md:text-4xl" style={{ color: '#f47820' }}>
                 {stats.averagePct}%
               </div>
             </div>
             <div className="border border-white/10 p-5">
-              <div className="text-xs uppercase tracking-widest opacity-60 mb-2">
+              <div className="text-sm uppercase tracking-widest opacity-60 mb-2">
                 Top Score
               </div>
-              <div className="font-display text-3xl flex items-baseline gap-2" style={{ color: '#f47820' }}>
-                <Medal className="w-5 h-5" />
+              <div className="font-display text-3xl md:text-4xl flex items-baseline gap-2" style={{ color: '#f47820' }}>
+                <Medal className="w-6 h-6" />
                 {stats.highScore
                   ? `${Math.round((stats.highScore.score / stats.highScore.total) * 100)}%`
                   : '—'}
               </div>
               {stats.highScore && (
-                <div className="text-xs opacity-60 mt-1 truncate">
+                <div className="text-sm opacity-70 mt-2 truncate">
                   {stats.highScore.name}
                 </div>
               )}
@@ -236,7 +236,7 @@ export default function ScoreboardPage() {
 
         {/* Sort selector */}
         <div className="mb-6">
-          <div className="text-xs uppercase tracking-widest opacity-60 mb-3">
+          <div className="text-sm uppercase tracking-widest opacity-60 mb-3">
             View by
           </div>
           <div className="flex items-stretch gap-2 flex-wrap">
@@ -246,17 +246,17 @@ export default function ScoreboardPage() {
                 <button
                   key={key}
                   onClick={() => setSortMode(key)}
-                  className="text-left px-4 py-3 transition-colors flex-1 min-w-[180px]"
+                  className="text-left px-5 py-4 transition-colors flex-1 min-w-[200px]"
                   style={{
                     background: active ? '#f47820' : 'transparent',
                     color: active ? '#0a0a0a' : '#f5f1ea',
                     border: active ? '1px solid #f47820' : '1px solid rgba(245,241,234,0.15)',
                   }}
                 >
-                  <div className="text-sm uppercase tracking-widest font-semibold">
+                  <div className="text-base uppercase tracking-widest font-semibold">
                     {label}
                   </div>
-                  <div className="text-xs mt-0.5" style={{ opacity: active ? 0.75 : 0.55 }}>
+                  <div className="text-sm mt-1" style={{ opacity: active ? 0.75 : 0.55 }}>
                     {description}
                   </div>
                 </button>
@@ -266,7 +266,7 @@ export default function ScoreboardPage() {
         </div>
 
         {error && (
-          <div className="border border-red-500/40 p-5 mb-6 text-sm text-red-300 flex items-start gap-2">
+          <div className="border border-red-500/40 p-5 mb-6 text-base text-red-300 flex items-start gap-2">
             <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
             <span>{error}</span>
           </div>
@@ -279,12 +279,12 @@ export default function ScoreboardPage() {
             style={{ background: 'rgba(244,120,32,0.08)' }}
           >
             <div className="flex items-center gap-2">
-              <Users className="w-5 h-5" style={{ color: '#f47820' }} />
-              <div className="text-sm uppercase tracking-[0.3em] font-semibold">
+              <Users className="w-6 h-6" style={{ color: '#f47820' }} />
+              <div className="text-base uppercase tracking-[0.3em] font-semibold">
                 {SORT_OPTIONS.find((o) => o.key === sortMode)?.label}
               </div>
             </div>
-            <div className="text-xs uppercase tracking-widest opacity-60">
+            <div className="text-sm uppercase tracking-widest opacity-60">
               {visibleRows.length} {visibleRows.length === 1 ? 'entry' : 'entries'}
             </div>
           </div>
@@ -308,34 +308,34 @@ export default function ScoreboardPage() {
                 return (
                   <div
                     key={row.id}
-                    className="px-5 py-4 flex items-center gap-4 hover:bg-white/[0.02] transition-colors"
+                    className="px-5 py-5 flex items-center gap-4 hover:bg-white/[0.02] transition-colors"
                     style={isNewPerson && idx !== 0
                       ? { borderTop: '1px solid rgba(244,120,32,0.2)' }
                       : undefined
                     }
                   >
                     <div
-                      className="font-display font-bold text-lg w-8 flex-shrink-0 text-center"
+                      className="font-display font-bold text-xl w-8 flex-shrink-0 text-center"
                       style={{ color: isPodium ? '#f47820' : 'rgba(245,241,234,0.4)' }}
                     >
                       {sortMode === 'topscore' ? idx + 1 : ''}
                     </div>
                     {isPodium ? (
-                      <Medal className="w-5 h-5 flex-shrink-0" style={{ color: '#f47820' }} />
+                      <Medal className="w-6 h-6 flex-shrink-0" style={{ color: '#f47820' }} />
                     ) : (
-                      <div className="w-5 flex-shrink-0" />
+                      <div className="w-6 flex-shrink-0" />
                     )}
                     <div className="flex-1 min-w-0">
-                      <div className="text-base font-semibold truncate">
+                      <div className="text-lg font-semibold truncate">
                         {row.name}
                       </div>
-                      <div className="text-xs opacity-50 mt-0.5 uppercase tracking-wider">
+                      <div className="text-sm opacity-50 mt-1 uppercase tracking-wider">
                         {formatDateTime(row.created_at)}
                       </div>
                     </div>
-                    <div className="font-display text-lg flex-shrink-0 text-right">
+                    <div className="font-display text-xl flex-shrink-0 text-right">
                       <div style={{ color: '#f47820' }}>{pct}%</div>
-                      <div className="text-xs opacity-50">
+                      <div className="text-sm opacity-50 mt-0.5">
                         {row.score} / {row.total}
                       </div>
                     </div>
