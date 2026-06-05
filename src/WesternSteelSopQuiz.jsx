@@ -67,8 +67,8 @@ const ALL_QUESTIONS = [
   },
   {
     type: "mc",
-    prompt: "All company communication must run through:",
-    options: ["Dialpad", "Personal phones", "Slack", "Email only"],
+    prompt: "All internal and external business related phone calls, text messages, and virtual meetings must run through:",
+    options: ["Dialpad", "Personal phones", "Company phones", "Google Suite"],
     correct: 0,
   },
   {
@@ -98,7 +98,7 @@ const ALL_QUESTIONS = [
   {
     type: "mc",
     prompt: "A project may only be converted once the following are in hand, unless an approved exception exists:",
-    options: ["Signed proposal only", "Signed proposal, cleared deposit, and required signed preliminary or scope approval drawings", "Verbal client approval", "Internal kickoff notes"],
+    options: ["Signed proposal only", "Signed proposal and required signed preliminary or scope approval drawings", "Verbal client approval", "Internal kickoff notes"],
     correct: 1,
   },
   {
@@ -122,7 +122,7 @@ const ALL_QUESTIONS = [
   {
     type: "mc",
     prompt: "Before estimating begins, a complete package should include items such as:",
-    options: ["Only the client's name and phone number", "A verbal scope from Sales", "A signed change order", "RFP, drawings, specifications, design criteria, schedule, vendor pricing, margin check, and CRM budget"],
+    options: ["Only the client's name and phone number", "A verbal scope from Sales", "A signed change order", "RFP, drawings, specifications, design criteria, and schedule"],
     correct: 3,
   },
   {
@@ -290,7 +290,7 @@ const ALL_QUESTIONS = [
   {
     type: "mc",
     prompt: "What is the purpose of the Lead Qualification SOP?",
-    options: ["To create a binding budget for the client", "To determine whether an opportunity is sufficiently qualified to justify estimating resources and proposal effort", "To replace the proposal development process", "To assign a Project Manager before conversion"],
+    options: ["To create a binding budget for the client", "To determine whether an opportunity is sufficiently qualified to justify Sales and Estimating resources", "To replace the proposal development process", "To assign a Project Manager before conversion"],
     correct: 1,
   },
   {
