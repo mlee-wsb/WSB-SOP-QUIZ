@@ -149,7 +149,7 @@ export default function ScoreboardPage() {
         .font-display { font-family: 'Oswald', sans-serif; letter-spacing: 0.02em; }
       `}</style>
 
-      <div className="max-w-5xl mx-auto px-5 py-10 md:py-12">
+      <div className="max-w-7xl mx-auto px-5 py-10 md:py-12">
         {/* Header */}
         <div className="flex items-center justify-between mb-10 gap-3 flex-wrap">
           <div className="flex items-center gap-4">
@@ -181,7 +181,7 @@ export default function ScoreboardPage() {
           background: 'repeating-linear-gradient(135deg, #f47820, #f47820 12px, transparent 12px, transparent 24px)',
         }} />
 
-        <h1 className="font-display text-3xl md:text-4xl font-medium mb-2">
+        <h1 className="font-display text-4xl md:text-5xl font-bold uppercase leading-tight tracking-tight mb-2">
           SOP Quiz Scoreboard
         </h1>
         <p className="text-sm md:text-base opacity-70 mb-8 leading-relaxed">

@@ -567,7 +567,7 @@ export default function WesternSteelSopQuiz() {
         .input-field::placeholder { color: rgba(245,241,234,0.35); }
       `}</style>
 
-      <div className="max-w-5xl mx-auto px-5 py-10 md:py-16">
+      <div className="max-w-7xl mx-auto px-5 py-10 md:py-16">
         <div className="flex items-center justify-between mb-8 gap-3">
           <div className="flex items-center min-w-0">
             <LogoBadge />
@@ -589,7 +589,7 @@ export default function WesternSteelSopQuiz() {
             <div className="text-xs uppercase tracking-[0.4em] mb-3 opacity-70 font-display font-semibold" style={{ color: "#f47820" }}>
               Western Steel Buildings
             </div>
-            <h1 className="font-display text-4xl md:text-6xl font-medium leading-tight mb-6">
+            <h1 className="font-display text-5xl md:text-7xl font-bold uppercase leading-none tracking-tight mb-6">
               SOP Manual Quiz
             </h1>
             <p className="text-base md:text-lg max-w-xl mb-6 opacity-90 leading-relaxed">
