@@ -567,7 +567,7 @@ export default function WesternSteelSopQuiz() {
         .input-field::placeholder { color: rgba(245,241,234,0.35); }
       `}</style>
 
-      <div className="max-w-7xl mx-auto px-5 py-10 md:py-16">
+      <div className="w-full px-6 md:px-12 lg:px-20 py-10 md:py-16">
         <div className="flex items-center justify-between mb-8 gap-3">
           <div className="flex items-center min-w-0">
             <LogoBadge />
@@ -583,25 +583,22 @@ export default function WesternSteelSopQuiz() {
 
         {stage === "welcome" && (
           <div>
-            <div className="diag-stripes h-2 mb-8" style={{
+            <div className="diag-stripes h-2 mb-10" style={{
               background: 'repeating-linear-gradient(135deg, #f47820, #f47820 12px, transparent 12px, transparent 24px)',
             }} />
-            <div className="text-xs uppercase tracking-[0.4em] mb-3 opacity-70 font-display font-semibold" style={{ color: "#f47820" }}>
-              Western Steel Buildings
-            </div>
-            <h1 className="font-display text-5xl md:text-7xl font-bold uppercase leading-none tracking-tight mb-6">
+            <h1 className="font-display text-6xl md:text-8xl font-bold uppercase leading-none tracking-tight mb-8">
               SOP Manual Quiz
             </h1>
-            <p className="text-base md:text-lg max-w-xl mb-6 opacity-90 leading-relaxed">
+            <p className="text-xl md:text-2xl max-w-3xl mb-8 opacity-90 leading-relaxed">
               50 questions covering our Standard Operating Procedures. Both multiple-choice and true / false. Mix is randomized each attempt.
             </p>
-            <div className="text-sm opacity-70 mb-10 space-y-1.5">
-              <div className="flex items-center gap-2">
-                <Shuffle className="w-4 h-4" style={{ color: "#f47820" }} />
+            <div className="text-base md:text-lg opacity-70 mb-12 space-y-3">
+              <div className="flex items-center gap-3">
+                <Shuffle className="w-5 h-5 flex-shrink-0" style={{ color: "#f47820" }} />
                 <span>Question order is randomized every time you take the quiz.</span>
               </div>
-              <div className="flex items-center gap-2">
-                <BookOpen className="w-4 h-4" style={{ color: "#f47820" }} />
+              <div className="flex items-center gap-3">
+                <BookOpen className="w-5 h-5 flex-shrink-0" style={{ color: "#f47820" }} />
                 <span>Review the SOP manual between attempts to push your score higher.</span>
               </div>
             </div>
@@ -702,7 +699,7 @@ export default function WesternSteelSopQuiz() {
               {q.type === 'tf' ? 'True / False' : 'Multiple Choice'}
             </div>
 
-            <h2 className="font-display font-medium text-2xl md:text-3xl leading-tight mb-8">
+            <h2 className="font-display font-medium text-3xl md:text-4xl leading-tight mb-8">
               {q.prompt}
             </h2>
 
@@ -750,7 +747,7 @@ export default function WesternSteelSopQuiz() {
                     >
                       {q.type === 'tf' ? '' : String.fromCharCode(65 + i)}
                     </span>
-                    <span className="text-base md:text-lg leading-relaxed">{opt}</span>
+                    <span className="text-lg md:text-xl leading-relaxed">{opt}</span>
                     {showFeedback && isCorrectAnswer && (
                       <CheckCircle2 className="w-5 h-5 flex-shrink-0 ml-auto" style={{ color: "#84cc16" }} />
                     )}
@@ -918,7 +915,7 @@ export default function WesternSteelSopQuiz() {
             <div className="font-display text-xl md:text-2xl opacity-70 mb-6 uppercase tracking-wider">
               {pct}% correct
             </div>
-            <p className="text-base md:text-lg opacity-85 max-w-2xl mb-10 leading-relaxed">
+            <p className="text-xl md:text-2xl opacity-85 max-w-3xl mb-10 leading-relaxed">
               {resultMessage(score, total)}
             </p>
 
@@ -971,7 +968,7 @@ export default function WesternSteelSopQuiz() {
                                 {question.type === 'tf' ? 'True / False' : 'Multiple Choice'}
                               </div>
                             </div>
-                            <div className="text-base md:text-lg font-medium leading-relaxed mb-4">
+                            <div className="text-lg md:text-xl font-medium leading-relaxed mb-4">
                               {question.prompt}
                             </div>
                             <div className="space-y-2">
