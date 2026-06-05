@@ -626,6 +626,13 @@ export default function WesternSteelSopQuiz() {
                 View Team Scoreboard
               </a>
             </div>
+
+            {/* Mission statement, subtly placed */}
+            <div className="mt-20 pt-8 border-t border-white/5 max-w-3xl">
+              <p className="text-sm md:text-base italic opacity-50 leading-relaxed">
+                "Our mission is to be a highly successful company by providing superior products, outstanding service, and the greatest value in the steel building industry. We respectfully engage and challenge each other to continuously improve and perform at the highest level while embracing the positive feedback necessary to openly assess our performance. Our deep commitment to growth, development and personal responsibility enables us to deliver a superior value to everyone associated with our company."
+              </p>
+            </div>
           </div>
         )}
 
