@@ -379,7 +379,7 @@ function LogoBadge() {
     <img
       src={LOGO_URL}
       alt="Western Steel Buildings"
-      className="h-10 md:h-12 w-auto object-contain"
+      className="h-12 md:h-16 w-auto object-contain"
       style={{ background: "transparent" }}
     />
   );
@@ -590,7 +590,9 @@ export default function WesternSteelSopQuiz() {
               SOP Manual Quiz
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mb-8 opacity-90 leading-relaxed">
-              50 questions covering our Standard Operating Procedures. Both multiple-choice and true / false.
+              50 questions covering our Standard Operating Procedures.
+              <br />
+              Both multiple-choice and true / false.
             </p>
             <div className="text-base md:text-lg opacity-70 mb-12 space-y-3">
               <div className="flex items-center gap-3">
@@ -704,7 +706,7 @@ export default function WesternSteelSopQuiz() {
               />
             </div>
 
-            <div className="text-xs uppercase tracking-[0.3em] opacity-50 mb-3 font-display font-semibold">
+            <div className="text-sm md:text-base uppercase tracking-[0.3em] opacity-60 mb-4 font-display font-semibold">
               {q.type === 'tf' ? 'True / False' : 'Multiple Choice'}
             </div>
 
@@ -821,7 +823,7 @@ export default function WesternSteelSopQuiz() {
               background: 'repeating-linear-gradient(135deg, #f47820, #f47820 12px, transparent 12px, transparent 24px)',
             }} />
 
-            <div className="text-xs uppercase tracking-[0.4em] opacity-60 mb-4">
+            <div className="font-display text-2xl md:text-4xl font-bold uppercase tracking-wider opacity-90 mb-6">
               Quiz Complete, {name}
             </div>
 
@@ -903,9 +905,14 @@ export default function WesternSteelSopQuiz() {
                   })}
                 </div>
               )}
-              <div className="px-6 py-3 border-t border-white/10 text-xs uppercase tracking-widest opacity-50 text-center">
-                <a href="/scoreboard" className="hover:opacity-100 transition-opacity hover:underline">
-                  View full scoreboard →
+              <div className="px-6 py-5 border-t border-orange-500/30 text-center" style={{ background: "rgba(244,120,32,0.04)" }}>
+                <a
+                  href="/scoreboard"
+                  className="inline-flex items-center gap-2 font-display text-base md:text-lg uppercase tracking-widest font-semibold hover:gap-3 transition-all"
+                  style={{ color: "#f47820" }}
+                >
+                  View Full Scoreboard
+                  <ChevronRight className="w-5 h-5" />
                 </a>
               </div>
             </div>

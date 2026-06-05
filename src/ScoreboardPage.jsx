@@ -29,7 +29,7 @@ function LogoBadge() {
     <img
       src={LOGO_URL}
       alt="Western Steel Buildings"
-      className="h-10 md:h-12 w-auto object-contain"
+      className="h-12 md:h-16 w-auto object-contain"
       style={{ background: 'transparent' }}
     />
   );
@@ -185,7 +185,7 @@ export default function ScoreboardPage() {
           SOP Quiz Scoreboard
         </h1>
         <p className="text-lg md:text-xl opacity-70 mb-10 leading-relaxed">
-          Standard Operating Procedures quiz results across the team. Sort below to see different views.
+          Standard Operating Procedures quiz results across the team.
         </p>
 
         {/* Stats summary */}
