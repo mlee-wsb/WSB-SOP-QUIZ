@@ -567,7 +567,7 @@ export default function WesternSteelSopQuiz() {
         .input-field::placeholder { color: rgba(245,241,234,0.35); }
       `}</style>
 
-      <div className="w-full px-6 md:px-12 lg:px-20 py-10 md:py-16">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 py-10 md:py-16">
         <div className="flex items-center justify-between mb-8 gap-3">
           <div className="flex items-center min-w-0">
             <LogoBadge />
@@ -586,33 +586,42 @@ export default function WesternSteelSopQuiz() {
             <div className="diag-stripes h-2 mb-10" style={{
               background: 'repeating-linear-gradient(135deg, #f47820, #f47820 12px, transparent 12px, transparent 24px)',
             }} />
-            <h1 className="font-display text-6xl md:text-8xl font-bold uppercase leading-none tracking-tight mb-8">
+            <h1 className="font-display text-5xl md:text-7xl font-bold uppercase leading-none tracking-tight mb-8">
               SOP Manual Quiz
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mb-8 opacity-90 leading-relaxed">
-              50 questions covering our Standard Operating Procedures. Both multiple-choice and true / false. Mix is randomized each attempt.
+              50 questions covering our Standard Operating Procedures. Both multiple-choice and true / false.
             </p>
             <div className="text-base md:text-lg opacity-70 mb-12 space-y-3">
               <div className="flex items-center gap-3">
-                <Shuffle className="w-5 h-5 flex-shrink-0" style={{ color: "#f47820" }} />
+                <Shuffle className="w-7 h-7 flex-shrink-0" style={{ color: "#f47820" }} />
                 <span>Question order is randomized every time you take the quiz.</span>
               </div>
               <div className="flex items-center gap-3">
-                <BookOpen className="w-5 h-5 flex-shrink-0" style={{ color: "#f47820" }} />
+                <BookOpen className="w-7 h-7 flex-shrink-0" style={{ color: "#f47820" }} />
                 <span>Review the SOP manual between attempts to push your score higher.</span>
               </div>
             </div>
-            <button
-              onClick={() => setStage("identify")}
-              className="group inline-flex items-center gap-3 px-7 py-4 font-display text-sm uppercase tracking-widest font-semibold transition-all hover:gap-5"
-              style={{ background: "#f47820", color: "#0a0a0a" }}
-            >
-              Begin Quiz
-              <ChevronRight className="w-5 h-5" />
-            </button>
-            <div className="mt-8 text-xs opacity-50 uppercase tracking-widest">
-              <a href="/scoreboard" className="hover:opacity-100 transition-opacity">
-                View team scoreboard →
+            <div className="flex flex-wrap items-center gap-4">
+              <button
+                onClick={() => setStage("identify")}
+                className="group inline-flex items-center gap-3 px-10 py-5 font-display text-base md:text-lg uppercase tracking-widest font-semibold transition-all hover:gap-5"
+                style={{ background: "#f47820", color: "#0a0a0a" }}
+              >
+                Begin Quiz
+                <ChevronRight className="w-6 h-6" />
+              </button>
+              <a
+                href="/scoreboard"
+                className="group inline-flex items-center gap-3 px-7 py-4 font-display text-sm md:text-base uppercase tracking-widest font-semibold border-2 transition-all hover:gap-5"
+                style={{
+                  borderColor: "#f47820",
+                  color: "#f47820",
+                  background: "transparent",
+                }}
+              >
+                <Users className="w-6 h-6" />
+                View Team Scoreboard
               </a>
             </div>
           </div>
