@@ -154,10 +154,6 @@ export default function ScoreboardPage() {
         <div className="flex items-center justify-between mb-10 gap-3 flex-wrap">
           <div className="flex items-center gap-4">
             <LogoBadge />
-            <div className="hidden md:block w-px h-10 bg-white/10" />
-            <div className="hidden md:block text-sm uppercase tracking-[0.3em] opacity-60">
-              SOP Quiz Scoreboard
-            </div>
           </div>
           <div className="flex items-center gap-3">
             <button
